@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #b5cfda;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #8283b9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f4f4f4;
+            padding: 12px;
+            margin: 5px 0;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #e0e0e0;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student List</h2>
+    <input type="text" id="nameInput" placeholder="Enter name"></input>
+    <input type="text" id="nameid" placeholder="Enter id"></input>
+
+    <button onclick="addStudent()">add</button>
+
+    <input type="text" id="delid" placeholder="Enter id"></input>
+    <button onclick="onedel()">delete</button>
+    <input type="text" id="updainput" placeholder="Enter name"></input>
+    <input type="text" id="updaindex" placeholder="Enter index"></input>
+    <button onclick="edit()">edit</button>
+    
+
+
+    <ul id="studentlist"></ul>
+    <script>
+        async function onedel(){
+            const id=document.getElementById("delid").value;
+            await fetch(`http://localhost:5000/students/${id}`,
+                {
+                    method:"DELETE"
+                }
+            );
+            document.getElementById("delid").value="";
+            loadstud();
+        }
+        async function loadstud() {
+            const res=await fetch("http://localhost:5000/students");
+            const data=await res.json();
+            const list=document.getElementById("studentlist");
+            list.innerHTML="";
+            data.forEach(s => {
+                const li=document.createElement('li');
+                li.textContent=`${s.id}. ${s.name}`;
+                list.appendChild(li);
+            });
+        }
+
+        async function edit() {
+            const index=document.getElementById("updaindex").value;
+            const input=document.getElementById("updainput").value;
+            await fetch(`http://localhost:5000/students/${index}`,{
+                method:"PUT",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({name:input})
+            });
+            document.getElementById("updaindex").value="";
+            document.getElementById("updainput").value="";
+            loadstud();
+
+        }
+
+
+        async function addStudent(){
+            const data=document.getElementById("nameInput").value;
+            const id=document.getElementById("nameid").value;
+
+
+            if(!data || !id){
+                return alert("enter name or id");
+            }
+
+            await fetch("http://localhost:5000/students",{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({id:id,name:data})
+            });
+            
+            document.getElementById("nameInput").value="";
+            document.getElementById("nameid").value="";
+
+            loadstud();
+        }
+        loadstud();
+    </script>
+</body>
+</html>
+
+
