@@ -57,13 +57,13 @@ student-management-app/
 | DELETE | `/students/:id`      | Delete a student by ID   |
 
 ## 📝 Example `POST /students` body:
-```json
+```
+json
 {
   "id": "101",
   "name": "John Doe"
 }
-
-
+```
 
 
 ---
@@ -73,15 +73,22 @@ student-management-app/
 
 1. **Clone the repository**:
 
-git clone https://github.com/yourusername/student-management-app.git && cd student-management-app
+```
+git clone https://github.com/yourusername/student-management-app.git
+```
+&& cd student-management-app
 
 2. **Install dependencies**:
 
+```
 npm install
+```
 
 3. **Start the server**:
 
+```
 node server.js
+```
 
 The server will be running at: http://localhost:5000
 
