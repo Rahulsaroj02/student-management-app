@@ -63,6 +63,9 @@ student-management-app/
   "name": "John Doe"
 }
 
+
+
+
 ## How to Run Locally
 
 1. **Clone the repository**:
