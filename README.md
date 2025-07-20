@@ -19,7 +19,7 @@ A full-stack CRUD (Create, Read, Update, Delete) application for managing studen
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshot
 
 <img width="1912" height="810" alt="image" src="https://github.com/user-attachments/assets/2aadc65e-92ff-4b3b-b200-0dbb29bacc35" />
 
@@ -34,15 +34,9 @@ student-management-app/
 
 │ └── server.js # Express backend with API routes
 
-│
+│ ├── public/
 
-├── frontend/
-
-│ ├── index.html # UI interface
-
-│ └── styles.css # (optional) extracted CSS
-
-│
+│ │ └── index.html # UI interface
 
 └── README.md
 
