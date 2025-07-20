@@ -28,14 +28,23 @@ A full-stack CRUD (Create, Read, Update, Delete) application for managing studen
 
 ## 📂 Project Structure
 student-management-app/
+
 │
+
 ├── backend/
+
 │ └── server.js # Express backend with API routes
+
 │
+
 ├── frontend/
+
 │ ├── index.html # UI interface
+
 │ └── styles.css # (optional) extracted CSS
+
 │
+
 └── README.md
 
 ## 📦 API Endpoints
@@ -52,14 +61,12 @@ student-management-app/
 {
   "id": "101",
   "name": "John Doe"
-}
+}```
 
 ## How to Run Locally
 
 1. **Clone the repository**:
 
-
-```bash
 git clone https://github.com/yourusername/student-management-app.git && cd student-management-app
 
 2. **Install dependencies**:
