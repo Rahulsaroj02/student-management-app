@@ -21,8 +21,7 @@ A full-stack CRUD (Create, Read, Update, Delete) application for managing studen
 
 ## 📸 Screenshots
 
-> Add screenshots of your UI here for better presentation  
-> *(e.g., form inputs, student list display)*
+<img width="1912" height="810" alt="image" src="https://github.com/user-attachments/assets/2aadc65e-92ff-4b3b-b200-0dbb29bacc35" />
 
 ---
 
