@@ -56,12 +56,12 @@ student-management-app/
 | PUT    | `/students/:id`      | Update a student's name  |
 | DELETE | `/students/:id`      | Delete a student by ID   |
 
-### 📝 Example `POST /students` body:
+## 📝 Example `POST /students` body:
 ```json
 {
   "id": "101",
   "name": "John Doe"
-}```
+}
 
 ## How to Run Locally
 
