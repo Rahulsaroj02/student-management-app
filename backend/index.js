@@ -37,7 +37,7 @@ mongoose.connect(process.env.MONGO_URI)
     console.log("mongoose connected");
     await seedAdmin();
 })
-.catch(()=>console.error("failed",error));
+.catch((error) => console.error("failed", error));
 
 app.get("/",(req,res)=>{
     res.send("server running..");
