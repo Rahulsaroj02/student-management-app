@@ -50,4 +50,4 @@ app.use("/api/faculty",facuroutes);
 
 
 const PORT=process.env.PORT || 5001;
-app.listen(PORT,()=>console.log(`servern is running on http://localhost:${PORT}`));
+app.listen(PORT,()=>console.log(`server is running on http://localhost:${PORT}`));
