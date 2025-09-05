@@ -14,7 +14,7 @@ export default function AdminPanel() {
     
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5001/api/admin/pending-users", {
+      const res = await fetch("https://student-management-app-j0mf.onrender.com/api/admin/pending-users", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -35,7 +35,7 @@ export default function AdminPanel() {
   const fetchapproved = async () => {
   setLoading(true);
   try {
-    const res = await fetch("http://localhost:5001/api/admin/approved-users", {
+    const res = await fetch("https://student-management-app-j0mf.onrender.com/api/admin/approved-users", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -56,7 +56,7 @@ export default function AdminPanel() {
   }, []);
   const handleDelete = async (userId, action) => {
     try {
-      const res = await fetch(`http://localhost:5001/api/admin/${action}/${userId}`, {
+      const res = await fetch(`https://student-management-app-j0mf.onrender.com/api/admin/${action}/${userId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -73,7 +73,7 @@ export default function AdminPanel() {
 
   const handleApproval = async (userId, action) => {
     try {
-      const res = await fetch(`http://localhost:5001/api/admin/${action}/${userId}`, {
+      const res = await fetch(`https://student-management-app-j0mf.onrender.com/api/admin/${action}/${userId}`, {
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${token}`,

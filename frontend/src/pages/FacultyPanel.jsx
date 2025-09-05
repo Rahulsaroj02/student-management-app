@@ -16,7 +16,7 @@ const FacultyPanel = () => {
           return;
         }
 
-        const res = await fetch("http://localhost:5001/api/faculty/students", {
+        const res = await fetch("https://student-management-app-j0mf.onrender.com/api/faculty/students", {
           headers: {
             "Authorization": `Bearer ${token}`,
           },
@@ -41,7 +41,7 @@ const FacultyPanel = () => {
   const handleUpdate = async (id, field, value) => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5001/api/faculty/students/${id}`, {
+      const res = await fetch(`https://student-management-app-j0mf.onrender.com/api/faculty/students/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

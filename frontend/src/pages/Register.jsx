@@ -24,7 +24,7 @@ export default function Register() {
     setMessage("");
 
     try {
-      const res = await axios.post("http://localhost:5001/api/auth/register", form);
+      const res = await axios.post("https://student-management-app-j0mf.onrender.com/api/auth/register", form);
       console.log(localStorage.getItem("token"));
       setMessage(res.data.message || "Registration submitted! Await admin approval.");
     } catch (error) {

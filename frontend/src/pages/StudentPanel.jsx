@@ -16,7 +16,7 @@ const StudentPanel = () => {
           return;
         }
 
-        const res = await fetch("http://localhost:5001/api/student/profile", {
+        const res = await fetch("https://student-management-app-j0mf.onrender.com/api/student/profile", {
           headers: {
             "Authorization": `Bearer ${token}`
           }
